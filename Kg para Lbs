@@ -1,0 +1,15 @@
+weight=float(input("Put your weigth here "))
+tipe=input("Your weight said in (K)g or (L)bs? ")
+if tipe.upper()=="K":
+    
+    print("Your weight in Lbs is "+str(weight*2.2))
+    
+elif tipe.upper()=="L":
+    
+    print("Your weight in Kg is "+str(weight/2.2))
+else:
+    tipe=input("Put 'K' for KG and 'L' for Lbs ")
+    if tipe.upper() == "K":
+        print("Your weight in Lbs is " + str(weight * 2.2))
+    elif tipe.upper() == "L":
+        print("Your weight in Kg is " + str(weight / 2.2))
