@@ -1,0 +1,282 @@
+import random
+
+monster = ["Mad Dinossaur", "Snake", "Red Deamon", "Farfhir", "Fenix"]
+
+enemy = random.randint(0, 4)
+mobLife = random.randint(800, 1000)
+weapon = int(input("Chose your weapon:\n"
+                   "1-Sword\n"
+                   "2-Dagger\n"
+                   "3-Staff\n"
+                   " "))
+
+if weapon == 1:
+    interation = input("Press 'Enter' for every action")
+    perLife = random.randint(850, 1050)
+
+    print("Your enemy is a " + str(monster[enemy]) + "\n"                                                     
+          "He have " + str(mobLife) + " life points\n"
+          "And you have " + str(perLife) + " life points\n"
+                                           "")
+
+    interation = input("Ready for the fight?\n"
+                       "Yes or No?\n"
+                       " ")
+
+    if interation.upper() == "NO":
+        mobLife = 0
+        print("Weak!")
+
+    while mobLife!=0:
+        rateChanceMob = random.randint(0, 20)
+        rateChancePer = random.randint(0, 20)
+
+        whichAttack=input("Which attack to use?\n"
+                          "1-Corta tudo\n"
+                          "2-Corta mundo\n"
+                          "3-Corta cabeça\n"
+                          " ")
+
+        if whichAttack=="1":
+            if rateChancePer<18:
+                damagePer = random.randint(150, 170)
+                mobLife = mobLife - damagePer
+                print("You hit a Corta tudo!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                  "Monster's life " + str(mobLife))
+        elif whichAttack=="2":
+            if rateChancePer<13:
+                damagePer = random.randint(171, 190)
+                mobLife = mobLife - damagePer
+                print("You hit a Corta mundo!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                      "Monster's life " + str(mobLife))
+        elif whichAttack=="3":
+            if rateChancePer<8:
+                damagePer = random.randint(210, 240)
+                mobLife = mobLife - damagePer
+                print("You hit a Corta cabeça!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                      "Monster's life " + str(mobLife))
+
+        interation = input(" ")
+
+        if rateChanceMob > 8:
+            attMob = random.randint(0, 5)
+            if attMob == 5:
+                damageMob = random.randint(171,200)
+                perLife = perLife - damageMob
+                print("The monster hit a critical attack!\n"
+                      "Your life is " + str(perLife))
+            elif attMob == 3 or attMob == 4:
+                damageMob = random.randint(141,170)
+                perLife = perLife - damageMob
+                print("The monster hit a good attack!\n"
+                      "Your life " + str(perLife))
+            else:
+                damageMob = random.randint(110,140)
+                perLife = perLife - damageMob
+                print("The monster hit a normal attack!\n"
+                      "Your life " + str(perLife))
+        else:
+            print("The monster missed the attack\n"
+                  "Your life " + str(perLife))
+
+        interation = input(" ")
+
+        if mobLife<=0 and perLife<=0:
+            print("Voces dois morreram!")
+            mobLife=0
+        elif mobLife <= 0:
+            print("Congrast!!You defeated the monster!")
+            mobLife = 0
+        elif perLife <= 0:
+            print("You died!LOSER!!")
+            mobLife = 0
+
+elif weapon == 2:
+    interation = input("Press 'Enter' for every action")
+    perLife = random.randint(750, 900)
+
+    print("Your enemy is a " + str(monster[enemy]) + "\n"
+          "He have " + str(mobLife) + " life points\n"
+          "And you have " + str(perLife) + " life points\n"
+                                           "")
+
+    interation = input("Ready for the fight?\n"
+                       "Yes or No?\n"
+                       " ")
+
+    if interation.upper() == "NO":
+        mobLife = 0
+        print("Weak!")
+
+    while mobLife!=0:
+        rateChanceMob = random.randint(0, 20)
+        rateChancePer = random.randint(0, 20)
+
+        whichAttack=input("Which attack to use?\n"
+                          "1-Sombra negra\n"
+                          "2-Voadora dos ceus\n"
+                          "3-Assassinato da meia noite\n"
+                          " ")
+
+        if whichAttack=="1":
+            if rateChancePer<18:
+                damagePer = random.randint(160, 180)
+                mobLife = mobLife - damagePer
+                print("You hit a Sombra negra!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                  "Monster's life " + str(mobLife))
+        elif whichAttack=="2":
+            if rateChancePer<13:
+                damagePer = random.randint(181, 200)
+                mobLife = mobLife - damagePer
+                print("You hit a Voadora dos ceus!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                      "Monster's life " + str(mobLife))
+        elif whichAttack=="3":
+            if rateChancePer<8:
+                damagePer = random.randint(220, 250)
+                mobLife = mobLife - damagePer
+                print("You hit a Assassinato da meia noite\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                      "Monster's life " + str(mobLife))
+
+        interation = input(" ")
+
+        if rateChanceMob > 8:
+            attMob = random.randint(0, 5)
+            if attMob == 5:
+                damageMob = random.randint(171,200)
+                perLife = perLife - damageMob
+                print("The monster hit a critical attack!\n"
+                      "Your life is " + str(perLife))
+            elif attMob == 3 or attMob == 4:
+                damageMob = random.randint(141,170)
+                perLife = perLife - damageMob
+                print("The monster hit a good attack!\n"
+                      "Your life " + str(perLife))
+            else:
+                damageMob = random.randint(110,140)
+                perLife = perLife - damageMob
+                print("The monster hit a normal attack!\n"
+                      "Your life " + str(perLife))
+        else:
+            print("The monster missed the attack\n"
+                  "Your life " + str(perLife))
+
+        interation = input(" ")
+
+        if mobLife <=0 and perLife <= 0:
+            print("Voces dois morreram!")
+            mobLife <= 0
+        elif mobLife <= 0:
+            print("Congrast!!You defeated the monster!")
+            mobLife = 0
+        elif perLife <= 0:
+            print("You died!LOSER!!")
+            mobLife = 0
+
+elif weapon == 3:
+    interation = input("Press 'Enter' for every action")
+    perLife = random.randint(670, 860)
+
+    print("Your enemy is a " + str(monster[enemy]) + "\n"
+          "He have " + str(mobLife) + " life points\n"                                 
+          "And you have " + str(perLife) + " life points\n"
+                                           "")
+
+    interation = input("Ready for the fight?\n"
+                       "Yes or No?\n"
+                       " ")
+
+    if interation.upper() == "NO":
+        mobLife = 0
+        print("Weak!")
+
+    while mobLife!=0:
+        rateChanceMob = random.randint(0, 20)
+        rateChancePer = random.randint(0, 20)
+
+        whichAttack = input("Which attack to use?\n"
+                            "1-Bola de fogo\n"
+                            "2-Cubo de gelo\n"
+                            "3-Kamehameha\n"
+                            " ")
+        if whichAttack == "1":
+            if rateChancePer < 18:
+                damagePer = random.randint(180, 200)
+                mobLife = mobLife - damagePer
+                print("You hit a Bola de fogo!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                      "Monster's life " + str(mobLife))
+        elif whichAttack == "2":
+            if rateChancePer < 13:
+                damagePer = random.randint(201, 220)
+                mobLife = mobLife - damagePer
+                print("You hit a Cubo de gelo!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                      "Monster's life " + str(mobLife))
+        elif whichAttack == "3":
+            if rateChancePer < 8:
+                damagePer = random.randint(240, 300)
+                mobLife = mobLife - damagePer
+                print("You hit a Kamehameha!\n"
+                      "Monster's life " + str(mobLife))
+            else:
+                print("You missed the attack!\n"
+                      "Monster's life " + str(mobLife))
+
+        interation = input(" ")
+
+        if rateChanceMob > 5:
+            attMob = random.randint(0, 5)
+            if attMob == 5:
+                damageMob = random.randint(201,220)
+                perLife = perLife - damageMob
+                print("The monster hit a critical attack!\n"
+                      "Your life is " + str(perLife))
+            elif attMob == 3 or attMob == 4:
+                damageMob = random.randint(141,170)
+                perLife = perLife - damageMob
+                print("The monster hit a good attack!\n"
+                      "Your life " + str(perLife))
+            else:
+                damageMob = random.randint(110,140)
+                perLife = perLife - damageMob
+                print("The monster hit a normal attack!\n"
+                      "Your life " + str(perLife))
+        else:
+            print("The monster missed the attack\n"
+                  "Your life " + str(perLife))
+
+        interation = input(" ")
+
+        if mobLife<=0 and perLife<=0:
+            print("Voces dois morreram!")
+            mobLife<=0
+        elif mobLife<=0:
+            print("Congrast!!You defeated the monster!")
+            mobLife=0
+        elif perLife<=0:
+            print("You died!LOSER!!")
+            mobLife=0
+
+print("Obrigado por jogar no 'mini joguinho de tabuleiro' ❤️❤️❤️!!!!!!!️ ")
